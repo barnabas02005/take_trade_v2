@@ -89,7 +89,7 @@ def get_open_position_counts(exchange, all_symbols):
 # Trading parameters
 usdt_value = 1.5
 leverage = 10
-fromPercnt = 0.2  #20%
+fromPercnt = 0.1  #20%
 
 def calculateLiquidationTargPrice(_liqprice, _entryprice, _percnt, _round):
     return round_to_sig_figs(_entryprice + (_liqprice - _entryprice) * _percnt, _round)
