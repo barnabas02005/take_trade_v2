@@ -29,7 +29,7 @@ def round_to_sig_figs(num, sig_figs):
     return round(num, sig_figs - int(math.floor(math.log10(abs(num)))) - 1)
 
 def check_trade_signal(exchange, symbol):
-    ohlcv = exchange.fetch_ohlcv(symbol, '1h', limit=10)
+    ohlcv = exchange.fetch_ohlcv(symbol, '1h', limit=50)
     df = pd.DataFrame(ohlcv, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume'])
 
     df['EMA_9'] = df['close'].ewm(span=9, adjust=False).mean()
